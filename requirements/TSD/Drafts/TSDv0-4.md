@@ -3,7 +3,7 @@
 ## 1. Title Page
 
 - **Project Name**: Event Booking System
-- **Version**: 0.3
+- **Version**: 0.4
 - **Date**: October 29, 2026
 - **Author(s)**:
     - Michael Angelo A. Ochengco
@@ -115,8 +115,6 @@
 ![Ticket Details](../../Wireframes/Mobile/Mobile6.png)
 
 7. **Admin Dashboard**
-
-![Admin Dashboard](../../Wireframes/Mobile/Mobile7.png)
 
 ### Typography Guide
 
@@ -232,35 +230,34 @@
 
 ## 9. Data Requirements
 
+- **Entity Relationship Diagram**
+
+![ERD](../../ERD/ERD.png)
+
 - **Data Models**:
-    - **User/Customer**: { id, email, password_hash, full_name, profile_info, role }
-        - Stores customer profile information and identifies authorized administrators.
-        - Authentication fields should be finalized once the customer login requirement is confirmed.
-    - **Event**: { id, title, description, venue_name, image_url, featured_flag }
-        - Stores event information displayed on the home page, event catalog, and event details.
-    - **Event Session/Schedule**: { id, event_id, session_date, start_time }
-        - Stores the available dates and times for each event.
-    - **Ticket Type/Access Type**: { id, event_id, tier_name, price, total_capacity, available_capacity }
-        - Stores ticket categories, prices, and availability, including General Admission, Premium, and VIP where applicable.
-    - **Seat**: { id, event_session_id, ticket_type_id, seat_number, status }
-        - Stores seat information for events that use assigned seating.
-    - **Booking**: { id, user_id, event_session_id, total_price, status, created_at }
-        - Records customer bookings, selected event sessions, booking totals, and booking status.
-    - **Booking Item / Electronic Ticket**: { id, booking_id, ticket_type_id, seat_id, ticket_reference_code }
-        - Stores the ticket details associated with a confirmed booking and supports electronic ticket generation.
-    - **Payment Record**: { id, booking_id, amount, payment_status, timestamp }
-        - Records the outcome of the simulated payment process.
-    - **VIP Package**: { id, package_name, description, perks, price }
-        - Stores information about VIP packages displayed to customers.
+    - **User/Customer**: Stores customer profile information and identifies authorized administrators through the assigned role. Email is unique and used for authentication; phone number is optional.
+    - **Role**: Defines authorization levels (Customer, Administrator).
+    - **Venue**: Stores the locations that host events and contain seats.
+    - **Event**: Stores event information displayed on the home page, event catalog, and event details. A featured flag marks events for the home page hero section.
+    - **Event Session/Schedule**: Stores the available dates and times for each event. Status is Scheduled, Completed, or Cancelled.
+    - **Ticket Type/Access Type**: Stores ticket categories, prices, and availability per event session, including General Admission, Premium, and VIP where applicable. A ticket type can optionally link to a VIP package.
+    - **Seat**: Stores the numbered seat map of a venue for events that use assigned seating.
+    - **Booking**: Records customer bookings, selected event sessions, booking totals, and booking status (Pending, Confirmed, Cancelled). Each booking has a unique, human-readable reference code.
+    - **Booking Item / Electronic Ticket**: Stores the ticket details associated with a confirmed booking and supports electronic ticket generation. The seat is left empty for general admission, and each ticket has a unique verification code. Status is Valid, Used, or Void.
+    - **Payment Record**: Records the outcome of the simulated payment process (Success, Failed, or Refunded), including a unique payment reference.
+    - **VIP Package**: Stores information about VIP packages displayed to customers, with perks included in the description.
+    - **Review** (optional feature): Stores customer ratings and comments for events.
 
 - **Database Requirements**:
     - The database must support storing, retrieving, creating, updating, and deleting the records required for event, ticket, and booking management.
-    - Relationships between events, schedules, ticket types, seats where applicable, bookings, and electronic tickets must maintain data consistency.
+    - Relationships between venues, events, sessions, ticket types, VIP packages, seats where applicable, bookings, and electronic tickets must maintain data consistency.
+    - The database must support both assigned seating and general admission, and enforce unique booking references, ticket codes, payment references, and user emails.
     - The database must support recording simulated payment outcomes and associating them with the corresponding bookings.
+    - Open item: decide how to prevent the same seat being sold twice for one session, since tickets do not currently record the session.
 
 - **Data Storage and Retrieval**:
     - Customers must be able to access event information, manage their profile information, and access electronic tickets generated from successful bookings.
-    - Administrators must be able to retrieve and manage event, ticket, and booking records through the admin dashboard.
+    - Administrators must be able to retrieve and manage venue, event, session, ticket, and booking records through the admin dashboard.
     - VIP package information must be retrievable for customer viewing.
 
 ## 10. External Interface Requirements
