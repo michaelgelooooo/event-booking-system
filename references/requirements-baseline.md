@@ -1,16 +1,6 @@
 # Event Booking System — Requirements Reference
 
-**Document status:** Working draft for Phase 1  
-**Version:** 0.2  
 **Purpose:** Shared reference for the Technical Specifications Document (TSD), Entity Relationship Diagram (ERD), wireframes, and typography guide.
-
-> **How to read this document**
->
-> - **Confirmed** means stated in the project brief or the client's answers.
-> - **Proposed** means a practical suggestion for keeping the MVP simple; it still needs team agreement.
-> - **Open** means the available information does not establish a decision.
->
-> This document consolidates what is currently known. It does not silently treat assumptions as client requirements.
 
 ---
 
