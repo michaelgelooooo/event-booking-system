@@ -62,6 +62,8 @@
     - **Admin Dashboard** – Provides administrators
 
 ## 5. Visual Mockup Reference
+### Figma Mockup Link
+- [Event Booking System Mockup](https://www.figma.com/design/8ie5MIdWwpy8YGVTMR8vkr/Untitled?node-id=0-1&t=M0hTFNo9l9c5H8tF-1)
 
 ### Desktop Mockups
 
