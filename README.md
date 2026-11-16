@@ -111,13 +111,13 @@ These may be considered for later iterations if the product expands beyond the i
 This repo contains the planning and specification materials for the product rather than a live application. It includes:
 
 - [README.md](./README.md) — project overview and product brief
-- [TSD.md](./TSD.md) — technical/specification documentation
-- [references/project-brief.pdf](./references/project-brief.pdf) — original business brief and project direction
-- [references/client-inquiries.md](./references/client-inquiries.md) — user/client requirement notes
-- [references/requirements-baseline.md](./references/requirements-baseline.md) — requirement baseline and MVP decision log
-- [requirements/ERD/ERD.md](./requirements/ERD/ERD.md) — database model and relationships
-- [requirements/Wireframes](./requirements/Wireframes) — UI mockups for desktop and mobile experiences
-- [requirements/Typgraphy Guide/Typography-Guide.md](./requirements/Typgraphy%20Guide/Typography-Guide.md) — visual design guidance
+- [TSD.md](./docs/TSD.md) — technical/specification documentation
+- [references/project-brief.pdf](./docs/references/project-brief.pdf) — original business brief and project direction
+- [references/client-inquiries.md](./docs/references/client-inquiries.md) — user/client requirement notes
+- [references/requirements-baseline.md](./docs/references/requirements-baseline.md) — requirement baseline and MVP decision log
+- [requirements/ERD/ERD.md](./docs/requirements/ERD/ERD.md) — database model and relationships
+- [requirements/Wireframes](./docs/requirements/Wireframes) — UI mockups for desktop and mobile experiences
+- [requirements/Typgraphy Guide/Typography-Guide.md](./docs/requirements/Typgraphy%20Guide/Typography-Guide.md) — visual design guidance
 - [Trello Task Board](https://trello.com/b/igLenvXn/batch-645-group-4)
 
 ## Summary
