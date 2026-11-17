@@ -21,8 +21,12 @@
     }
 
     const handleAccessTickets = () => {
-        // Example: router.push({ path: '/tickets', query: { orderId: orderRef.value } })
-        console.log('Routing to tickets for:', orderRef.value)
+        router.push({ 
+        path: '/tickets', 
+        query: { 
+            name: name.value 
+        } 
+    })
     }
 
     const handleRetry = () => {

@@ -14,6 +14,7 @@ import LoginPage from "../pages/customer/LoginPage.vue";
 import RegisterPage from "../pages/customer/RegisterPage.vue";
 import CheckoutPage from "../pages/customer/CheckoutPage.vue";
 import BookingConfirmationPage from "../pages/customer/BookingConfirmationPage.vue";
+import TicketView from "../pages/customer/TicketView.vue";
 
 // Admin Pages
 import AdminDashboardPage from "../pages/admin/AdminDashboardPage.vue";
@@ -65,6 +66,11 @@ const routes = [
                 path: "booking-confirmation",
                 name: "BookingConfirmation",
                 component: BookingConfirmationPage
+            },
+            {
+                path:"tickets",
+                name: "TicketView",
+                component: TicketView
             }
         ]
     },
