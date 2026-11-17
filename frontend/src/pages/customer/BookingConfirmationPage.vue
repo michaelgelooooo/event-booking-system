@@ -16,8 +16,15 @@
 
     // Navigation handlers passing the order reference forward
     const handleViewReceipt = () => {
-        // Example: router.push({ path: '/receipt', query: { orderId: orderRef.value } })
-        console.log('Routing to receipt for:', orderRef.value)
+        router.push({ 
+        path: '/receipt', 
+        query: { 
+            orderRef: orderRef.value,
+            name: name.value,
+            email: email.value,
+            total: total.value
+        } 
+    })
     }
 
     const handleAccessTickets = () => {
