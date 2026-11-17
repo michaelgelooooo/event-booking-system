@@ -1,5 +1,6 @@
 <script setup>
   import { ref } from 'vue'
+  import { useRouter } from 'vue-router'
 
     // Form state
     const firstName = ref('Eric')
@@ -13,6 +14,8 @@
     // UI States
     const isLoading = ref(false)
     const isSuccess = ref(false)
+
+    const router = useRouter()
 
     // Error state (start empty)
     const errors = ref({
@@ -67,16 +70,18 @@
         // Fake a 1.5-second network request
         await new Promise(resolve => setTimeout(resolve, 1500))
 
-        // 3. Simulate Server Response 
-        // (Logic: If the card ends in '2222', trigger the bank decline error. Otherwise, succeed.)
-        if (cardNumber.value.endsWith('2222')) {
-            errors.value.general = 'Your payment was declined by the bank. Please review your card details or try a different payment method.'
-            isSuccess.value = false
-        } else {
-            isSuccess.value = true
-            errors.value.general = ''
-            // Optional: clear the cart here or push to a success route
+        const isDeclined = cardNumber.value.endsWith('2222')
+
+        router.push({
+        path: '/booking-confirmation', 
+        query: {
+            status: isDeclined ? 'failed' : 'success',
+            name: firstName.value,
+            email: email.value,
+            total: '29,500',
+            orderRef: `ORD-${Math.floor(Math.random() * 90000) + 10000}A` // Generate fake ref
         }
+    })
 
         isLoading.value = false
     }
