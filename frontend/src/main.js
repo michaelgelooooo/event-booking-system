@@ -1,14 +1,19 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import router from "./router";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+// Bootswatch theme
+import "bootswatch/dist/flatly/bootstrap.min.css";
+
+// Bootstrap JavaScript
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import "notyf/notyf.min.css";
+// Bootstrap Icons
+import "bootstrap-icons/font/bootstrap-icons.css";
 
+// Global CSS
 import "./assets/style.css";
 
-createApp(App)
-    .use(router)
-    .mount("#app");
+// Router
+import router from "./router";
+
+createApp(App).use(router).mount("#app");

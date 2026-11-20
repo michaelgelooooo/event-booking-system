@@ -1,50 +1,142 @@
+
+
 import { createRouter, createWebHistory } from "vue-router";
 
-import LoginPage from "../pages/LoginPage.vue";
-import RegisterPage from "../pages/RegisterPage.vue";
-import CustomerProfilePage from "../pages/CustomerProfilePage.vue";
+// Layouts
+import CustomerLayout from "../layouts/CustomerLayout.vue";
+import AdminLayout from "../layouts/AdminLayout.vue";
+
+// Customer Pages
+import HomePage from "../pages/customer/HomePage.vue";
+import EventCatalogPage from "../pages/customer/EventCatalogPage.vue";
+import EventDetailsPage from "../pages/customer/EventDetailsPage.vue";
+import CustomerProfilePage from "../pages/customer/CustomerProfilePage.vue";
+import LoginPage from "../pages/customer/LoginPage.vue";
+import RegisterPage from "../pages/customer/RegisterPage.vue";
+import CheckoutPage from "../pages/customer/CheckoutPage.vue";
+import BookingConfirmationPage from "../pages/customer/BookingConfirmationPage.vue";
+import TicketView from "../pages/customer/TicketView.vue";
+
 import MyTicketsPage from "../pages/MyTicketsPage.vue";
 import TransactionHistoryPage from "../pages/TransactionHistoryPage.vue";
 import AccountSettingsPage from "../pages/AccountSettingsPage.vue";
+
+// Admin Pages
+import AdminDashboardPage from "../pages/admin/AdminDashboardPage.vue";
+import AdminEventsPage from "../pages/admin/AdminEventsPage.vue";
+import AdminTicketsPage from "../pages/admin/AdminTicketsPage.vue";
+import AdminBookingsPage from "../pages/admin/AdminBookingsPage.vue";
+import ReceiptView from "../pages/customer/ReceiptView.vue";
 
 
 const routes = [
     {
         path: "/",
-        name: "Login",
-        component: LoginPage
+
+        component: CustomerLayout,
+        children: [
+            {
+                path: "",
+                name: "Home",
+                component: HomePage
+            },
+            {
+                path: "events",
+                name: "EventCatalog",
+                component: EventCatalogPage
+            },
+            {
+                path: "events/:eventId",
+                name: "EventDetails",
+                component: EventDetailsPage
+            },
+            {
+                path: "profile",
+                name: "CustomerProfile",
+                component: CustomerProfilePage
+            },
+            {
+                path: "login",
+                name: "Login",
+                component: LoginPage
+            },
+            {
+                path: "register",
+                name: "Register",
+                component: RegisterPage
+            },
+            {
+                path: "/tickets",
+                name: "MyTickets",
+                component: MyTicketsPage
+            },
+             {
+              path: "/transactions",
+              name: "TransactionHistory",
+              component: TransactionHistoryPage
+            },
+            {
+              path: "/settings",
+              name: "AccountSettings",
+              component: AccountSettingsPage
+             },
+            {
+                path: "checkout",
+                name: "Checkout",
+                component: CheckoutPage
+            },
+            {
+                path: "booking-confirmation",
+                name: "BookingConfirmation",
+                component: BookingConfirmationPage
+            },
+            {
+                path:"tickets",
+                name: "TicketView",
+                component: TicketView
+            },
+            {
+                path: "receipt",
+                name: "ReceiptView",
+                component: ReceiptView
+            }
+        ]
     },
     {
-        path: "/register",
-        name: "Register",
-        component: RegisterPage
-    },
-    {
-        path: "/profile",
-        name: "CustomerProfile",
-        component: CustomerProfilePage
-    },
-    {
-        path: "/tickets",
-        name: "MyTickets",
-        component: MyTicketsPage
-    },
-    {
-    path: "/transactions",
-    name: "TransactionHistory",
-    component: TransactionHistoryPage
-    },
-    {
-    path: "/settings",
-    name: "AccountSettings",
-    component: AccountSettingsPage
-    },
+        path: "/admin",
+        component: AdminLayout,
+        children: [
+            {
+                path: "",
+                name: "AdminDashboard",
+                component: AdminDashboardPage
+            },
+            {
+                path: "events",
+                name: "AdminEvents",
+                component: AdminEventsPage
+            },
+            {
+                path: "tickets",
+                name: "AdminTickets",
+                component: AdminTicketsPage
+            },
+            {
+                path: "bookings",
+                name: "AdminBookings",
+                component: AdminBookingsPage
+            }
+        ]
+    }
 
 ];
 
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
+    scrollBehavior() {
+        return { top: 0 };
+    }
 });
 
 export default router;
