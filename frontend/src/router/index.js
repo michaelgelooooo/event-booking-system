@@ -1,4 +1,5 @@
 
+
 import { createRouter, createWebHistory } from "vue-router";
 
 // Layouts
@@ -16,6 +17,10 @@ import CheckoutPage from "../pages/customer/CheckoutPage.vue";
 import BookingConfirmationPage from "../pages/customer/BookingConfirmationPage.vue";
 import TicketView from "../pages/customer/TicketView.vue";
 
+import MyTicketsPage from "../pages/MyTicketsPage.vue";
+import TransactionHistoryPage from "../pages/TransactionHistoryPage.vue";
+import AccountSettingsPage from "../pages/AccountSettingsPage.vue";
+
 // Admin Pages
 import AdminDashboardPage from "../pages/admin/AdminDashboardPage.vue";
 import AdminEventsPage from "../pages/admin/AdminEventsPage.vue";
@@ -23,9 +28,11 @@ import AdminTicketsPage from "../pages/admin/AdminTicketsPage.vue";
 import AdminBookingsPage from "../pages/admin/AdminBookingsPage.vue";
 import ReceiptView from "../pages/customer/ReceiptView.vue";
 
+
 const routes = [
     {
         path: "/",
+
         component: CustomerLayout,
         children: [
             {
@@ -58,6 +65,21 @@ const routes = [
                 name: "Register",
                 component: RegisterPage
             },
+            {
+                path: "/tickets",
+                name: "MyTickets",
+                component: MyTicketsPage
+            },
+             {
+              path: "/transactions",
+              name: "TransactionHistory",
+              component: TransactionHistoryPage
+            },
+            {
+              path: "/settings",
+              name: "AccountSettings",
+              component: AccountSettingsPage
+             },
             {
                 path: "checkout",
                 name: "Checkout",
@@ -106,6 +128,7 @@ const routes = [
             }
         ]
     }
+
 ];
 
 const router = createRouter({
