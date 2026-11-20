@@ -66,15 +66,15 @@ const closeTicket = () => {
                     My Tickets
                 </router-link>
 
-                <a href="#" class="sidebar-link">
+                <router-link to="/transactions" class="sidebar-link">
                     Transaction History
-                </a>
+                </router-link>
 
                 <p class="sidebar-heading">ACCOUNT</p>
 
-                <a href="#" class="sidebar-link">
+                <router-link to="/settings" class="sidebar-link">
                     Settings
-                </a>
+                </router-link>
 
                 <router-link to="/" class="sidebar-link logout-link">
                     Logout

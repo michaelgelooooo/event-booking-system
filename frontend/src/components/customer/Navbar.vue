@@ -26,9 +26,9 @@ const isMenuOpen = ref(false);
 						<router-link :to="{ name: 'EventCatalog' }" class="nav-link" @click="isMenuOpen = false"> Events </router-link>
 					</li>
 
-					<li class="nav-item">
+					<!-- <li class="nav-item">
 						<a href="#vip-packages" class="nav-link" @click="isMenuOpen = false"> VIP Packages </a>
-					</li>
+					</li> -->
 				</ul>
 
 				<!-- Account Links -->

@@ -17,9 +17,9 @@ import CheckoutPage from "../pages/customer/CheckoutPage.vue";
 import BookingConfirmationPage from "../pages/customer/BookingConfirmationPage.vue";
 import TicketView from "../pages/customer/TicketView.vue";
 
-import MyTicketsPage from "../pages/MyTicketsPage.vue";
-import TransactionHistoryPage from "../pages/TransactionHistoryPage.vue";
-import AccountSettingsPage from "../pages/AccountSettingsPage.vue";
+import MyTicketsPage from "../pages/customer/MyTicketsPage.vue";
+import TransactionHistoryPage from "../pages/customer/TransactionHistoryPage.vue";
+import AccountSettingsPage from "../pages/customer/AccountSettingsPage.vue";
 
 // Admin Pages
 import AdminDashboardPage from "../pages/admin/AdminDashboardPage.vue";

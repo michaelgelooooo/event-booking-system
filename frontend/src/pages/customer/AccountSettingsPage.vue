@@ -80,7 +80,7 @@ const savePreferences = () => {
                 <router-link to="/transactions" class="sidebar-link">
                     Transaction History
                 </router-link>
-
+                <p class="sidebar-heading">ACCOUNT</p>
                 <router-link to="/settings" class="sidebar-link active">
                     Settings
                 </router-link>
